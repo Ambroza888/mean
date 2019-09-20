@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<style>
+
+</style>
+<body>
+      <div class="container">
+          <div *ngIf='errors'>
+              <p style="color:red">{{errors}}</p>
+            </div>
+        <p>Know of a pet needing a home ?</p>
+        <form>
+          <div class="row">
+            <div class="col-8">
+              <p>Pet Name:</p>
+              <input type="text" name="name" [(ngModel)]='takePet.name'
+              required
+              minlength="3"
+              [(ngModel)]='takePet.name'
+              #name = "ngModel"
+              >
+              <p>Pet Type:</p>
+              <input type="text" name="name" [(ngModel)]='takePet.type'>
+              <p>Description:</p>
+              <input type="text" name="name" [(ngModel)]='takePet.description'>
+            </div>
+          </div>
+          <div class="row-8">
+            <div class="col-8">
+              <p>Skills:</p>
+              <p>Skill 1:<input type="text" name="skill" [(ngModel)]='takePet.skills[0].skill'></p>
+              <p>Skill 2:<input type="text" name="skill" [(ngModel)]='takePet.skills[1].skill'></p>
+              <p>Skill 3:<input type="text" name="skill" [(ngModel)]='takePet.skills[2].skill'></p>
+              <button (click)='addPet()'>Add Pet</button> 
+            </div>
+          </div>
+        </form>
+        <button (click)='goBack()' class="ml-3">Cancel</button>
+      </div>
+
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
